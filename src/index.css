@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animal Type Classification Design System
+All colors MUST be HSL - Agricultural/Nature inspired theme
+*/
+
+@layer base {
+  :root {
+    /* Nature-inspired base colors */
+    --background: 120 20% 98%;
+    --foreground: 125 15% 15%;
+
+    /* Card system */
+    --card: 120 30% 96%;
+    --card-foreground: 125 15% 15%;
+
+    --popover: 120 30% 96%;
+    --popover-foreground: 125 15% 15%;
+
+    /* Primary - Forest Green */
+    --primary: 125 40% 25%;
+    --primary-foreground: 120 20% 98%;
+    --primary-light: 125 35% 35%;
+    --primary-glow: 125 45% 45%;
+
+    /* Secondary - Earth Brown */
+    --secondary: 30 25% 85%;
+    --secondary-foreground: 30 40% 20%;
+
+    /* Muted - Sage */
+    --muted: 120 15% 90%;
+    --muted-foreground: 125 12% 50%;
+
+    /* Accent - Agricultural Orange */
+    --accent: 35 85% 60%;
+    --accent-foreground: 35 15% 15%;
+    --accent-light: 35 75% 70%;
+
+    /* Status colors */
+    --success: 140 60% 40%;
+    --success-foreground: 140 20% 95%;
+    --warning: 45 90% 55%;
+    --warning-foreground: 45 15% 15%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 20% 95%;
+
+    /* UI elements */
+    --border: 120 20% 85%;
+    --input: 120 20% 92%;
+    --ring: 125 40% 25%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-nature: linear-gradient(180deg, hsl(var(--primary-light)), hsl(var(--accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.3);
+    --shadow-card: 0 2px 15px -3px hsl(var(--foreground) / 0.1);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark nature theme */
+    --background: 125 20% 8%;
+    --foreground: 120 20% 92%;
+
+    --card: 125 15% 12%;
+    --card-foreground: 120 20% 92%;
+
+    --popover: 125 15% 12%;
+    --popover-foreground: 120 20% 92%;
+
+    /* Primary - Bright Forest Green */
+    --primary: 125 45% 55%;
+    --primary-foreground: 125 20% 8%;
+    --primary-light: 125 40% 65%;
+    --primary-glow: 125 50% 65%;
+
+    /* Secondary - Dark Earth */
+    --secondary: 30 15% 20%;
+    --secondary-foreground: 30 25% 85%;
+
+    --muted: 125 10% 18%;
+    --muted-foreground: 120 15% 65%;
+
+    /* Accent - Warm Orange */
+    --accent: 35 75% 65%;
+    --accent-foreground: 35 20% 10%;
+    --accent-light: 35 65% 75%;
+
+    /* Status colors (dark adjusted) */
+    --success: 140 55% 50%;
+    --success-foreground: 140 20% 10%;
+    --warning: 45 85% 60%;
+    --warning-foreground: 45 20% 10%;
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 20% 10%;
+
+    --border: 125 15% 25%;
+    --input: 125 15% 18%;
+    --ring: 125 45% 55%;
+
+    /* Updated gradients for dark */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-nature: linear-gradient(180deg, hsl(var(--primary-light)), hsl(var(--accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    /* Updated shadows for dark */
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.2);
+    --shadow-card: 0 2px 15px -3px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Custom utility classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-nature {
+    background: var(--gradient-nature);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Camera guidance animations */
+  @keyframes pulse-guidance {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scan-line {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  .animate-pulse-guidance {
+    animation: pulse-guidance 2s ease-in-out infinite;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.6s ease-out forwards;
+  }
+
+  .animate-scan-line {
+    animation: scan-line 2s linear infinite;
+  }
+}
