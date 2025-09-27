@@ -67,7 +67,7 @@ const Index = () => {
     setError(null);
 
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
       
       // Breed Recognition
       const breedPrompt = "Analyze the image of the animal and identify its breed. Return a JSON object with the following structure: { \"type\": \"Cattle\" | \"Buffalo\", \"breed\": \"string\", \"confidence\": number (0-100), \"characteristics\": [\"string\"] }.";
